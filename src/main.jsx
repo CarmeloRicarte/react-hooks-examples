@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { FocusScreen } from "./useRef/FocusScreen";
+import { Layout } from "./useLayoutEffect/Layout";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <FocusScreen />
+    <Layout />
   </React.StrictMode>
 );
