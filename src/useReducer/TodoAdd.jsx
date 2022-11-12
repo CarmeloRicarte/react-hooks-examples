@@ -1,7 +1,12 @@
 import { useRef } from "react";
-
-export const TodoAdd = ({ onNewTodo }) => {
+import PropTypes from "prop-types";
+const TodoAdd = ({ onNewTodo }) => {
   const inputRef = useRef();
+  /**
+   * When the form is submitted, prevent the default action, then if the input has a value, create a
+   * new todo object with the current time as the id, the input value as the description, and done set
+   * to false, then call the onNewTodo function with the new todo object as the argument
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
     if (inputRef.current.value) {
@@ -30,3 +35,9 @@ export const TodoAdd = ({ onNewTodo }) => {
     </form>
   );
 };
+
+TodoAdd.propTypes = {
+  onNewTodo: PropTypes.func.isRequired,
+};
+
+export default TodoAdd;

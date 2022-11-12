@@ -1,50 +1,22 @@
-import { useEffect, useReducer } from "react";
-import { TodoAdd } from "./TodoAdd";
+import { useTodo } from "../hooks/useTodo";
+import TodoAdd from "./TodoAdd";
 import TodoList from "./TodoList";
-import { todoReducer } from "./todoReducer";
-
-const initialState = [];
-
-const init = () => {
-  return JSON.parse(localStorage.getItem("todos") || []);
-};
 
 export const TodoApp = () => {
-  const [todos, dispatchTodoAction] = useReducer(
-    todoReducer,
-    initialState,
-    init
-  );
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  const handleNewTodo = (newTodo) => {
-    dispatchTodoAction({
-      type: "ADD_TODO",
-      payload: newTodo,
-    });
-  };
-
-  const handleDeleteTodo = (id) => {
-    dispatchTodoAction({
-      type: "REMOVE_TODO",
-      payload: id,
-    });
-  };
-
-  const handleToggleTodo = (id) => {
-    dispatchTodoAction({
-      type: "MARK_AS_DONE",
-      payload: id,
-    });
-  };
+  // useTodo con todos, los handle, itialState, init
+  const {
+    todos,
+    handleNewTodo,
+    handleDeleteTodo,
+    handleToggleTodo,
+    todosCount,
+    pendingTodosCount,
+  } = useTodo();
 
   return (
     <>
-      <h1>Todo App ({todos.length})</h1>
-      <h2>Pendientes: {todos.filter((todo) => todo.done === false).length}</h2>
+      <h1>TODO App: {todosCount}</h1>
+      <h2>Pendientes: {pendingTodosCount}</h2>
       <hr />
 
       <div className="row">
