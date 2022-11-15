@@ -2,9 +2,8 @@ import { useEffect, useReducer } from "react";
 import { todoReducer } from "../useReducer/todoReducer";
 
 
-const init = () => {
-    return JSON.parse(localStorage.getItem("todos") || []);
-};
+const init = () =>
+    localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : []
 
 export const useTodo = () => {
     const [todos, dispatchTodoAction] = useReducer(
