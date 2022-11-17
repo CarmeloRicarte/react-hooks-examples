@@ -26,7 +26,7 @@ export const MultipleCustomHooks = () => {
 
       {isLoading ? <LoadingQuote /> : <Quote quote={quote} author={author} />}
 
-      {error && <ErrorQuote />}
+      {error && <ErrorQuote error={error} />}
       <button
         onClick={() => increment()}
         type="button"
