@@ -1,0 +1,80 @@
+// Vitest Snapshot v1
+
+exports[`Test of <TodoApp /> > should match with snapshot 1`] = `
+<div>
+  <h1>
+    TODO App: 
+    2
+  </h1>
+  <h2>
+    Pendientes: 
+    1
+  </h2>
+  <hr />
+  <div
+    class="row"
+  >
+    <div
+      class="col-7"
+    >
+      <ul
+        class="list-group"
+      >
+        <li
+          class="list-group-item d-flex justify-content-between my-2"
+        >
+          <span
+            class="align-self-center "
+            data-testid="1-item-description"
+          >
+            Todo 1
+          </span>
+          <button
+            class="btn btn-danger"
+            type="button"
+          >
+            Delete
+          </button>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between my-2"
+        >
+          <span
+            class="align-self-center text-decoration-line-through"
+            data-testid="2-item-description"
+          >
+            Todo 2
+          </span>
+          <button
+            class="btn btn-danger"
+            type="button"
+          >
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="col-5"
+    >
+      <h4>
+        Add TODO
+      </h4>
+      <hr />
+      <form>
+        <input
+          class="form-control"
+          placeholder="What needs to be done?"
+          type="text"
+        />
+        <button
+          class="btn btn-outline-primary mt-2"
+          type="submit"
+        >
+          Add
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
