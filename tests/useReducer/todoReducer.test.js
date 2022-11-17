@@ -44,7 +44,6 @@ describe("Test of todoReducer", () => {
       payload: 1,
     };
     const newState = todoReducer(initialState, action);
-    console.log(newState);
     expect(newState[0].done).toBe(true);
   });
 });
