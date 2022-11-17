@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import { UserContext } from "./context/UserContext";
 
-UserContext;
 export const LoginPage = () => {
   const { user, setUser } = useContext(UserContext);
   return (
     <>
       <h1>LoginPage</h1>
       <hr />
-      <pre>{JSON.stringify(user, null, 3)}</pre>
+      <pre aria-label="user-info">{JSON.stringify(user, null, 3)}</pre>
 
       <button
+        data-testid="login-button"
         type="button"
         className="btn btn-primary"
         onClick={() =>
