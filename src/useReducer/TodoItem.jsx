@@ -4,6 +4,7 @@ const TodoItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
   return (
     <li className="list-group-item d-flex justify-content-between my-2">
       <span
+        data-testid={`${todo.id}-item-description`}
         onClick={() => onToggleTodo(todo.id)}
         className={`align-self-center ${
           todo.done ? "text-decoration-line-through" : ""
